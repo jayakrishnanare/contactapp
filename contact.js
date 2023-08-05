@@ -65,6 +65,30 @@ app.delete('/deletecontact/:id',async(req,res) => {
     }
 })
 
+//updating the data
+
+
+app.put('/updatecontact/:id', async (req,res) => {
+    const {firstname,surname,company,phone,phoneNumberType,email, isFav} = req.body
+    try{
+        const update = await ContactDetails.findByIdAndUpdate(req.params.id , {firstname,surname,company,phone,phoneNumberType,email, isFav} , {new:true})
+        return res.send(update)
+    } catch(err){
+        console.log(err.message)
+    }
+})
+
+//
+app.get('/favcontacts', async(req,res)=> {
+    try{
+        const favcontacts = await ContactDetails.find({isFav : true})
+        return res.send(favcontacts)
+    }
+    catch(err){
+        console.log(err.message)
+    }
+})
+
 
 
 

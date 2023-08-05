@@ -5,7 +5,6 @@ const { Module } = require('vm');
 const ContactDetails = mongoose.Schema({
     firstname : {
         type : String,
-        required : true
     },
     surname : {
         type : String,
@@ -21,7 +20,7 @@ const ContactDetails = mongoose.Schema({
     },
     phoneNumberType : {
         type : String,
-        enum : ["mobile","work", "home","main", "custom","other"],
+        enum : ["MOBILE","WORK", "HOME","MAIN", "CUSTOM","OTHER"],
         required : true
     },
     email : {
