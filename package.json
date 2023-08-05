@@ -1,0 +1,27 @@
+{
+  "name": "contactapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contact.js",
+  "scripts": {
+    "start": "node contact.js",
+    "server": "nodemon contact.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jayakrishnanare/contactapp.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jayakrishnanare/contactapp/issues"
+  },
+  "homepage": "https://github.com/jayakrishnanare/contactapp#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
