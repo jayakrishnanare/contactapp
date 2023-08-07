@@ -87,8 +87,37 @@ app.get('/favcontacts', async(req,res)=> {
     catch(err){
         console.log(err.message)
     }
-})
+});
 
+
+//checking if the number is alreday existed or not
+
+app.get('/checkcontact/:phone', async (req, res) => {
+    try {
+      const phone = req.params.phone;
+      const existingContact = await ContactDetails.findOne({ phone: phone });
+      
+      if (existingContact) {
+        return res.json({ exists: true });
+      } else {
+        return res.json({ exists: false });
+      }
+    } catch (err) {
+      console.log(err.message);
+    }
+  });
+
+  //sorting the contact list
+
+  app.get('/sortcontacts', async(req,res) => {
+    try{
+        const sortContacts = await ContactDetails.find().sort({firstname : 1})
+        return res.send(sortContacts)
+    }
+    catch(err){
+        console.log(err.message)
+    }
+  })
 
 
 
