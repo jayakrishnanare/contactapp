@@ -16,7 +16,8 @@ const ContactDetails = mongoose.Schema({
         type : Number,
         required : true,
         minlength : 10,
-        maxlength : 10
+        maxlength : 10,
+        unique : true
     },
     phoneNumberType : {
         type : String,
@@ -24,7 +25,8 @@ const ContactDetails = mongoose.Schema({
         required : true
     },
     email : {
-        type : String
+        type : String,
+        unique : true
     },
     isFav : {
         type : Boolean,
