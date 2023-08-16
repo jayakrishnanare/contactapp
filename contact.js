@@ -74,7 +74,7 @@ app.get("/getallcontacts", async (req, res) => {
   try {
     const getallData = await ContactDetails.find();
     let status = { status: 200, message: "success", response: getallData };
-    console.log(status);
+    // console.log(status);
      res.send(status);
     // return res.send(getallData)
   } catch (err) {
@@ -89,7 +89,7 @@ app.get("/getcontacts/:id", async (req, res) => {
   try {
     const getdataById = await ContactDetails.findById(req.params.id);
     let status = { status: 200, message: "sucess", response: getdataById };
-    console.log(status);
+    // console.log(status);
     return res.send(status);
     //    return res.send( await getdataById)
   } catch (err) {
@@ -103,7 +103,7 @@ app.get("/getcontacts/:id", async (req, res) => {
 app.delete("/deletecontact/:id", async (req, res) => {
   try {
     const deletedata = await ContactDetails.findByIdAndDelete(req.params.id);
-    let status = { status: 200, message: "sucess", response: deletedata };
+    let status = { status: 404, message: "sucess", response: deletedata };
     console.log(status);
     return res.json(status);
     // return res.send(await deletedata)
